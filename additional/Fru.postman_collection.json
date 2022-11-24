@@ -1,0 +1,123 @@
+{
+	"info": {
+		"_postman_id": "7014f0c1-37a0-4fe1-887d-ba569aab9bfa",
+		"name": "Fru",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Set new flight",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"airline_iata\":\"FR\",\r\n   \"flight_number\":\"1022\",\r\n   \"from_code\":\"OTP\",\r\n   \"to_code\":\"FTP\",\r\n   \"departure_date_utc\":\"2022-01-19 09:10:00\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}v1/flights",
+					"host": [
+						"{{base_url}}v1"
+					],
+					"path": [
+						"flights"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update flight",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					},
+					{
+						"key": "X-Requested-With",
+						"value": "XMLHttpRequest",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"airline_iata\":\"UA\",\r\n   \"flight_number\":\"2012\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}v1/flights/54dd3c7e-01ca-4ff5-b7bb-5c94cbc9298c",
+					"host": [
+						"{{base_url}}v1"
+					],
+					"path": [
+						"flights",
+						"54dd3c7e-01ca-4ff5-b7bb-5c94cbc9298c"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All flights",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}v1/flights",
+					"host": [
+						"{{base_url}}v1"
+					],
+					"path": [
+						"flights"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost/",
+			"type": "default"
+		}
+	]
+}
